@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    	:root {
+        --angle: -15;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            height: 300px;
+            margin: 50px auto;
+            position: relative;
+            background-color: #ecf0f1;
+            clp-path: circle(10% at 50% 43%);
+        }
+
+        .triangle {
+            width: 150px;
+            height: 130px;
+            position: absolute;
+        }
+
+        .triangle1 {
+            background-color: #FF6347;
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            top: 0;
+            left: 0;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 50% 0%;
+            z-index: 1;
+            /* warna oren*/
+        }
+
+        .triangle2 {
+            background-color: #FFD700;
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            top: 130px;
+            left: 0;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 0% 0%;
+            z-index: 2;
+        }
+        
+        .triangle3 {
+            background-color: #8A2BE2;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            top: 130px;
+            right: 25%;
+            left: 25%;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 0% 100%;
+            z-index: 3;
+        }
+
+        .triangle4 {
+            background-color: #ADFF2F;
+            clip-path: polygon(50% 100%, 0 0, 100% 0);
+            top: 130px;
+            right: 0;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 50% 100%;
+            z-index: 4;
+        }
+
+        .triangle5 {
+            background-color: #FF69B4;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            top: 0;
+            right: 0;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 100% 100%;
+            z-index: 5;
+        }
+        
+        .triangle6 {
+        	--min: calc(-2 * var(--angle) - 30);
+            --plus: calc(var(--angle) + 15);
+            background-color: #4682B4;
+            clip-path: polygon(calc((18 - var(--plus)) * 1%) 0, 100% 0, 50% 100%, calc((35 - var(--plus)) * 1%) calc((70 - var(--min)) * 1%), calc((51 - var(--plus)) * 1%) calc((70 - var(--min)) * 1%));
+            top: 0;
+            left: 25%;
+            transform: rotate(calc(var(--angle) * 1deg));
+            transform-origin: 100% 0%;
+            z-index: 6;
+        }
+    </style>
+    <title>Hexagon from Triangles</title>
+</head>
+<body>
+    <div class="container">
+        <div class="triangle triangle1"></div>
+        <div class="triangle triangle2"></div>
+        <div class="triangle triangle3"></div>
+        <div class="triangle triangle4"></div>
+        <div class="triangle triangle5"></div>
+        <div class="triangle triangle6"></div>
+    </div>
+</body>
+</html>
