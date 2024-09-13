@@ -15,13 +15,14 @@
             margin: 50px auto;
             position: relative;
             background-color: #ecf0f1;
-            clp-path: circle(10% at 50% 43%);
+            clip-path: circle(10% at 50% 43%);
         }
 
         .triangle {
             width: 150px;
             height: 130px;
             position: absolute;
+            filter: drop-shadow(1px 1px 5px black);
         }
 
         .triangle1 {
@@ -77,13 +78,13 @@
         }
         
         .triangle6 {
-        	--min: calc(-2 * var(--angle) - 30);
-            --plus: calc(var(--angle) + 15);
+            --min: calc(-2 * var(--angle) - 30);
+            --plus: calc(var(--angle) + 15 + var(--min));
             background-color: #4682B4;
             clip-path: polygon(calc((18 - var(--plus)) * 1%) 0, 100% 0, 50% 100%, calc((35 - var(--plus)) * 1%) calc((70 - var(--min)) * 1%), calc((51 - var(--plus)) * 1%) calc((70 - var(--min)) * 1%));
             top: 0;
             left: 25%;
-            transform: rotate(calc(var(--angle) * 1deg));
+            transform: rotate(calc(var(--angle)* 1deg));
             transform-origin: 100% 0%;
             z-index: 6;
         }
